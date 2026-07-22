@@ -1,4 +1,5 @@
 import { NavLink, useNavigate } from 'react-router-dom'
+import ThemeToggle from './ThemeToggle'
 
 const API = import.meta.env.VITE_API_URL || ''
 
@@ -28,7 +29,7 @@ export default function Layout({ admin, children }) {
                             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                         </svg>
                     </div>
-                    <div>
+                    <div className="sidebar-title-container">
                         <div className="sidebar-title">e-Office</div>
                         <div className="sidebar-subtitle">Admin Panel</div>
                     </div>
@@ -74,13 +75,16 @@ export default function Layout({ admin, children }) {
                             <div className="admin-email">{admin?.email}</div>
                         </div>
                     </div>
-                    <button className="btn-logout-sidebar" onClick={handleLogout}>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
-                            <polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/>
-                        </svg>
-                        Logout
-                    </button>
+                    <div className="sidebar-footer-actions">
+                        <ThemeToggle showLabel className="sidebar-theme-toggle" />
+                        <button className="btn-logout-sidebar" onClick={handleLogout}>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+                                <polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/>
+                            </svg>
+                            Logout
+                        </button>
+                    </div>
                 </div>
             </aside>
 

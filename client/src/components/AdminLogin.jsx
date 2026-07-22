@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import ThemeToggle from './ThemeToggle'
 
 const API = import.meta.env.VITE_API_URL || ''
 
@@ -38,6 +39,9 @@ export default function AdminLogin() {
 
     return (
         <div className="login-page">
+            <div className="login-theme-toggle-wrap">
+                <ThemeToggle showLabel className="login-theme-toggle" />
+            </div>
             <div className="login-container">
                 <div className="login-header">
                     <div className="login-logo">
